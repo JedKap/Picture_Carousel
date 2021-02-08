@@ -8,7 +8,7 @@
 
 .carousel {
   width: 600px;
-  height: 500px;
+  height: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@
 
 .title {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,4 +33,32 @@
   color: yellow;
   -webkit-text-stroke: 1px black;
   -webkit-text-fill-color: yellow;
+}
+
+.outerDiv {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  align-items: center;
+}
+
+.btn {
+  // top: 50%;
+  // transform: translateY(-50%);
+  // width: 5%;
+  height: 80%;
+  background: lightgray;
+  outline: none;
+  border: none;
+  font-size: 2em;
+  .glyph {
+    color: white;
+    cursor: pointer;
+  }
+  &:hover {
+    .glyph {
+      color: white;
+      opacity: 100%;
+    }
+  }
 }
