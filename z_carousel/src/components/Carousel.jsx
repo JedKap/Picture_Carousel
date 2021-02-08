@@ -6,14 +6,16 @@ const Carousel = () => {
   return (
     <React.Fragment>
       {images && images.length > 0 ? (
-        <div>
-          {images.map((item) => {
-            return (
-              <div key={item.id} className="slide">
-                <Slide image={item.image} title={item.title} />
-              </div>
-            );
-          })}
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div className="carousel">
+            {images.map((item) => {
+              return (
+                <div key={item.id} className="slide">
+                  <Slide image={item.image} title={item.title} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       ) : (
         <div>No images to display!</div>
