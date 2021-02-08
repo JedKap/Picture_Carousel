@@ -5,12 +5,15 @@ const Slide = (props) => {
   const { title, image } = props;
   return (
     <div>
-      <div className="slide">
+      <div>
         <img
           src={image}
           alt={title}
           style={{ width: "100%", height: "auto" }}
         />
+      </div>
+      <div className="title">
+        <div className="titleText">{title}</div>
       </div>
     </div>
   );
