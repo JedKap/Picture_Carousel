@@ -65,9 +65,13 @@ const Carousel = () => {
     <React.Fragment>
       {images && images.length > 0 ? (
         <div className="outerDiv">
-          <button id="btnLeft" className="btn" onClick={() => moveCar("left")}>
-            <div className="glyph">&#9664;</div>
-          </button>
+          <div className="buttonBox">
+            {offset <= -1 && (
+              <button className="btn" onClick={() => moveCar("left")}>
+                <div className="glyph">&#9664;</div>
+              </button>
+            )}
+          </div>
           <div
             className="carousel"
             onMouseDown={(e) => mouseDown(e)}
@@ -87,16 +91,16 @@ const Carousel = () => {
               );
             })}
           </div>
-          <button
-            id="btnRight"
-            className="btn"
-            onClick={() => moveCar("right")}
-          >
-            <div className="glyph">&#9654;</div>
-          </button>
+          <div className="buttonBox">
+            {offset > -1 * (images.length - 1) && (
+              <button className="btn" onClick={() => moveCar("right")}>
+                <div className="glyph">&#9654;</div>
+              </button>
+            )}
+          </div>
         </div>
       ) : (
-        <div>No images to display!</div>
+        <div className="no-images">No images to display!</div>
       )}
     </React.Fragment>
   );
